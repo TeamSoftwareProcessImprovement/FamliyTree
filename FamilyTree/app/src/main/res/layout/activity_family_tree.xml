@@ -21,13 +21,39 @@
             android:layout_height="wrap_content"
            />
 
-        <Button
-            android:layout_width="45dp"
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/round_corner_blue"
-            android:text="+"
-            android:id="@+id/addFamilyButton"
-            android:layout_gravity="right|bottom" />
+            android:layout_gravity="right|bottom"
+            >
+
+            <Button
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cycle_corner_blue"
+                android:text="-"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:id="@+id/addFamilyButton"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <Button
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cycle_corner_blue"
+                android:text="+"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                android:id="@+id/deleteFamilyButton"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                />
+
+        </LinearLayout>
 
     </FrameLayout>
 
