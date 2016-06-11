@@ -15,6 +15,7 @@ import com.example.xue2015.myandroidapp.R;
 /**
  * Created by Xue on 2016/6/11.
  */
+
 public class DrawView extends View{
     public DrawView(Context context, AttributeSet attrs){
         super(context,attrs);
