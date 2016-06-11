@@ -19,6 +19,14 @@
         <com.example.xue2015.myandroidapp.draw.DrawView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+           />
+
+        <Button
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corner_blue"
+            android:text="+"
+            android:id="@+id/addFamilyButton"
             android:layout_gravity="right|bottom" />
 
     </FrameLayout>

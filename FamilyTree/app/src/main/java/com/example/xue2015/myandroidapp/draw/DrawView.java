@@ -29,8 +29,16 @@ public class DrawView extends View{
 
         drawFTNode(canvas,left,top);
         drawFTNode(canvas,400,top);
-        drawFTNode(canvas,50,600);
-        drawFTNode(canvas,500,600);
+        drawLineToEach(canvas,left,top,400, top);
+
+        Paint paint = new Paint();
+        paint.setStrokeWidth(4);
+        paint.setColor(Color.GRAY);
+        canvas.drawLine((left+200+400)/2, top+150, (left+200+400)/2,500,paint);
+        drawFTNode(canvas,(left+200+400)/2-100,500);
+
+
+//        drawFTNode(canvas,500,600);
 
     }
 
@@ -87,6 +95,23 @@ public class DrawView extends View{
 
         canvas.drawText(identity,(left + right)/2 - paintText.measureText(identity)/2 ,bottom+30,paintText);
         canvas.drawText(name,(left + right)/2 - paintText.measureText(name)/2,bottom+65,paintText);
+    }
+
+    public void drawLineToEach(Canvas canvas, float firstLeft, float firstTop, float secondLeft, float secondTop){
+        float startX;
+        float startY;
+        float stopX;
+        float stopY;
+
+        startX = firstLeft + 200;
+        startY = firstTop + 150;
+        stopX = secondLeft;
+        stopY = secondTop + 150;
+        Paint paintLine = new Paint();
+        paintLine.setStrokeWidth(4);
+        paintLine.setColor(Color.GRAY);
+        canvas.drawLine(startX, startY, stopX, stopY, paintLine);
+
     }
 
 

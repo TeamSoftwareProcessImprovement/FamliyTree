@@ -64,6 +64,7 @@ public class LoginActivity extends Activity {
     public void onClickLogin(View v) {
         Intent it = new Intent();
         it.setClass(this, MainActivity.class);
+//        it.setClass(this, FamilyTreeActivity.class);
         startActivity(it);
         ActivityCollector.finishAll();
     }
