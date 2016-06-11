@@ -30,8 +30,6 @@ public class TitlebarIcon extends LinearLayout{
 //        left.setOnClickListener(new OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                // 添加图标的跳转事件，跳转到“抽屉”界面
-//                //Intent来实现
 //
 //
 //            }
@@ -40,7 +38,6 @@ public class TitlebarIcon extends LinearLayout{
 //        right.setOnClickListener(new OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                //添加图标的跳转事件，跳转到“我的问友”界面
 //
 //            }
 //        });
