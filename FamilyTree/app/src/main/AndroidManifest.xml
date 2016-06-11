@@ -112,6 +112,10 @@
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" >
         </activity>
+        <activity
+            android:name=".I"
+            android:label="@string/title_activity_I" >
+        </activity>
         <!--<activity-->
             <!--android:name=".SettingsActivity"-->
             <!--android:label="@string/title_activity_settings" >-->

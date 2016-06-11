@@ -49,10 +49,6 @@ public class MainActivity extends FragmentActivity implements
 
     protected SlidingMenu side_drawer;
 
-    /** head 头部 的左侧菜单 按钮 */
-    private ImageView top_head;
-    /** head 头部 的右侧菜单 按钮 */
-    private ImageView top_more;
 
     private RelativeLayout mainpage, questionnairecenter, pointshop, push;
     private List<ListItemQuestions> questionList01 = new ArrayList<ListItemQuestions>();
@@ -101,7 +97,6 @@ public class MainActivity extends FragmentActivity implements
                 textView.getLayoutParams().height = ViewGroup.LayoutParams.MATCH_PARENT;
                 textView.getLayoutParams().width = ViewGroup.LayoutParams.MATCH_PARENT;
             }
-            initView();
             initSlidingMenu();
             tabhost.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
                 @Override
@@ -428,37 +423,6 @@ public class MainActivity extends FragmentActivity implements
     }
 
     /** 初始化layout控件 */
-    private void initView() {
-        top_head = (ImageView) findViewById(R.id.top_head);
-        top_more = (ImageView) findViewById(R.id.top_more);
-        top_head.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                if (side_drawer.isMenuShowing()) {
-                    side_drawer.showContent();
-                } else {
-                    side_drawer.showMenu();
-                }
-            }
-        });
-        top_more.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-//                if (side_drawer.isSecondaryMenuShowing()) {
-//                    side_drawer.showContent();
-//                } else {
-//                    side_drawer.showSecondaryMenu();
-//                }
-                Intent it = new Intent(MainActivity.this, MyQuestionFriendsActivity.class);
-                MainActivity.this.startActivity(it);
-            }
-        });
-
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -541,7 +505,7 @@ public class MainActivity extends FragmentActivity implements
                 startActivity(it);
                 break;
             case R.id.main_page_bottom_button_push:
-                it.setClass(this, OthersActivity.class);
+                it.setClass(this, I.class);
                 startActivity(it);
                 break;
             default:

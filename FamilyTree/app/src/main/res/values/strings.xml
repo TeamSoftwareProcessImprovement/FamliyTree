@@ -14,6 +14,7 @@
     <string name="title_activity_qdoing">QDoingActivity</string>
     <string name="title_activity_qdone">QDoneActivity</string>
     <string name="title_activity_qcount">QCountActivity</string>
+    <string name="title_activity_I">I</string>
     <string name="change_psw">修改密码</string>
     <string name="my_info">我的信息</string>
     <string name="my_point">我的积分</string>

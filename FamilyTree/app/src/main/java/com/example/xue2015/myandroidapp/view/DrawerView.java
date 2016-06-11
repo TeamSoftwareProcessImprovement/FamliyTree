@@ -25,7 +25,7 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 public class DrawerView implements OnClickListener{
 	private final Activity activity;
 	SlidingMenu localSlidingMenu;
-	private RelativeLayout chang_psw,myInfo,myPoint,myBind,address,feedback;
+	private RelativeLayout chang_psw,myInfo,myBind,feedback;
 	private Button setting,exit;
 	public DrawerView(Activity activity) {
 		this.activity = activity;
@@ -63,14 +63,9 @@ public class DrawerView implements OnClickListener{
 		myInfo =(RelativeLayout)localSlidingMenu.findViewById(R.id.my_info);
 		myInfo.setOnClickListener(this);
 		
-		myPoint =(RelativeLayout)localSlidingMenu.findViewById(R.id.my_point);
-		myPoint.setOnClickListener(this);
-		
 		myBind =(RelativeLayout)localSlidingMenu.findViewById(R.id.my_bind);
 		myBind.setOnClickListener(this);
-		
-		address =(RelativeLayout)localSlidingMenu.findViewById(R.id.address);
-		address.setOnClickListener(this);
+
 		
 		feedback =(RelativeLayout)localSlidingMenu.findViewById(R.id.feedback);
 		feedback.setOnClickListener(this);
@@ -93,16 +88,8 @@ public class DrawerView implements OnClickListener{
             activity.startActivity(new Intent(activity, ChangeInfoActivity.class));
             activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 			break;
-		case R.id.my_point:
-            activity.startActivity(new Intent(activity,MyPointsActivity.class));
-            activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-			break;
 		case R.id.my_bind:
             activity.startActivity(new Intent(activity,MyBindingActivity.class));
-            activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-			break;
-		case R.id.address:
-                activity.startActivity(new Intent(activity,ReceiveAddressActivity.class));
             activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 			break;
 		case R.id.feedback:

@@ -121,20 +121,6 @@
                         android:text="@string/my_info" />
                 </RelativeLayout>
 
-                <ImageView
-                    style="@style/left_drawer_item_line"
-                    android:layout_width="fill_parent"
-                    android:layout_height="0.5dip" />
-
-                <RelativeLayout
-                    android:id="@+id/my_point"
-                    style="@style/left_drawer_item_layout" >
-
-                    <TextView
-                        style="@style/left_drawer_item_text"
-                        android:drawableLeft="@drawable/left_drawer_activity_selector"
-                        android:text="@string/my_point" />
-                </RelativeLayout>
 
                 <ImageView
                     style="@style/left_drawer_item_line"
@@ -151,20 +137,6 @@
                         android:text="@string/my_bind" />
                 </RelativeLayout>
 
-                <ImageView
-                    style="@style/left_drawer_item_line"
-                    android:layout_width="fill_parent"
-                    android:layout_height="0.5dip" />
-
-                <RelativeLayout
-                    android:id="@+id/address"
-                    style="@style/left_drawer_item_layout" >
-
-                    <TextView
-                        style="@style/left_drawer_item_text"
-                        android:drawableLeft="@drawable/address"
-                        android:text="@string/address" />
-                </RelativeLayout>
 
                 <ImageView
                     style="@style/left_drawer_item_line"
