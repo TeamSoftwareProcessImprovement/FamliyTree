@@ -2,10 +2,14 @@ package com.example.xue2015.myandroidapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class FamilyTreeActivity extends AppCompatActivity {
+    private Button addFamilyButton;
+    private Button deleteFamilyButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +23,29 @@ public class FamilyTreeActivity extends AppCompatActivity {
         tb.hideLeft();
         tb.hideRight();
 
+        initView();
 
 
     }
+
+    public void initView(){
+        addFamilyButton = (Button) findViewById(R.id.addFamilyButton);
+        deleteFamilyButton = (Button) findViewById(R.id.deleteFamilyButton);
+
+        addFamilyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //add Family Menber
+            }
+        });
+
+        deleteFamilyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //delete Family Memeber
+            }
+        });
+    }
+
+
 }
