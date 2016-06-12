@@ -88,9 +88,12 @@
         <activity
             android:name=".I"
             android:label="@string/title_activity_I" />
+
         <activity
             android:name=".FamilyTreeActivity"
             android:label="FamilyTreeActivity" />
+
+
         <!-- <activity -->
         <!-- android:name=".SettingsActivity" -->
         <!-- android:label="@string/title_activity_settings" > -->
@@ -108,7 +111,11 @@
             android:name=".WelcomeActivity"
             android:label="@string/title_activity_welcome" />
         <activity android:name=".AddFamilyMember" />
+<<<<<<< HEAD
         <activity android:name=".DeleteFamilyMemberActivity"></activity>
+=======
+        <activity android:name=".ConnectActivity"></activity>
+>>>>>>> origin/master
     </application>
 
 </manifest>
