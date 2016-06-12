@@ -11,6 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.example.xue2015.myandroidapp.draw.DrawRelativeLine;
@@ -25,6 +26,7 @@ public class FamilyTreeActivity extends Activity {
     private float initTop;
     private float initLeft;
     private FrameLayout fl;
+//    private ScrollView sv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,21 +69,23 @@ public class FamilyTreeActivity extends Activity {
 
         //FrameLayout add DrawView
         fl = (FrameLayout) findViewById(R.id.familyTreeFrameLayout);
+        //ScrollView
+//        sv = (ScrollView) findViewById(R.id.familyTreeScrollView);
         drawInitNode();
+
         drawParentNode(initLeft,initTop);
 
-//        drawParentNode(600,600);
+        drawParentNode(initLeft + 100 - 150 -100 +300,initTop - 50 - 50 - 250);
 
     }
 
     public void drawInitNode(){
-
-
         DrawView dw = new DrawView(this);
         dw.setLeftPos(initLeft);
         dw.setTopPos(initTop);
         FrameLayout.LayoutParams tparams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         fl.addView(dw,tparams);
+//        sv.addView(fl);
     }
 
     public void drawParentNode(float childLeft, float childTop){
@@ -92,7 +96,21 @@ public class FamilyTreeActivity extends Activity {
         float fatherTop = childTop - 50 - 50 - 250;
         float motherLeft = fatherLeft + 300;
         float motherTop = fatherTop;
+        //draw line
+        DrawRelativeLine drawRelativeLine = new DrawRelativeLine(this);
 
+        if(fatherLeft < 0){         //father mode
+            fatherLeft = childLeft;
+            motherLeft = fatherLeft + 300;
+            drawRelativeLine.setDrawMode(1);
+        }
+        if(motherLeft+200 > screemWidth){       //mother mode
+            motherLeft = childLeft;
+            fatherLeft = motherLeft - 300;
+            drawRelativeLine.setDrawMode(2);
+        }
+
+        //draw frame
         DrawView fatherDraw = new DrawView(this);
         fatherDraw.setTopPos(fatherTop);
         fatherDraw.setLeftPos(fatherLeft);
@@ -101,7 +119,7 @@ public class FamilyTreeActivity extends Activity {
         motherDraw.setLeftPos(motherLeft);
         motherDraw.setTopPos(motherTop);
 
-        DrawRelativeLine drawRelativeLine = new DrawRelativeLine(this);
+//        drawRelativeLine.setDrawMode(0);
         drawRelativeLine.setChildLeft(childLeft);
         drawRelativeLine.setChildTop(childTop);
 
@@ -110,6 +128,8 @@ public class FamilyTreeActivity extends Activity {
         fl.addView(fatherDraw,tparams);
         fl.addView(motherDraw,tparams);
         fl.addView(drawRelativeLine,tparams);
+
+//        sv.addView(fl);
     }
 
 }

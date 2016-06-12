@@ -92,10 +92,10 @@ public class DrawView extends View{
         Bitmap bitmap =  BitmapFactory.decodeResource(getResources(), R.drawable.usericon);
         Rect src = new Rect();
         Rect dst = new Rect();
-        src.top = 10;
-        src.left = 10;
-        src.right = 210;
-        src.bottom = 210;
+        src.top = 50;
+        src.left = 50;
+        src.right = 250;
+        src.bottom = 250;
         dst.top = (int) top+5;
         dst.left = (int) left+5;
         dst.right = (int) right;
