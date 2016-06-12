@@ -34,9 +34,9 @@ public class LoginActivity extends Activity {
             e.printStackTrace();
         }
 
-        TextView tv = (TextView) this.findViewById(R.id.iForgetMyPsw);
-        tv.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);// 下划线
-        tv.setTextColor(Color.BLUE);
+//        TextView tv = (TextView) this.findViewById(R.id.iForgetMyPsw);
+//        tv.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG);// 下划线
+//        tv.setTextColor(Color.BLUE);
     }
 
     @Override
@@ -63,8 +63,8 @@ public class LoginActivity extends Activity {
 
     public void onClickLogin(View v) {
         Intent it = new Intent();
-        it.setClass(this, MainActivity.class);
-//        it.setClass(this, FamilyTreeActivity.class);
+      //  it.setClass(this, MainActivity.class);
+        it.setClass(this, FamilyTreeActivity.class);
         startActivity(it);
         ActivityCollector.finishAll();
     }

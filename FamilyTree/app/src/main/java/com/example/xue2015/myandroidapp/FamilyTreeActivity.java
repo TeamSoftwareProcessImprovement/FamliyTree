@@ -11,6 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -40,6 +41,31 @@ public class FamilyTreeActivity extends Activity {
         tb.hideLeft();
         tb.hideRight();
 
+        RelativeLayout connect = (RelativeLayout) findViewById(R.id.main_page_bottom_button_questionnairecenter);
+        RelativeLayout circle = (RelativeLayout) findViewById(R.id.main_page_bottom_button_pointshop);
+        RelativeLayout me = (RelativeLayout) findViewById(R.id.main_page_bottom_button_push);
+
+        connect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it  = new Intent(FamilyTreeActivity.this,ConnectActivity.class);
+                startActivity(it);
+            }
+        });
+        circle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it  = new Intent(FamilyTreeActivity.this,ConnectActivity.class);
+                startActivity(it);
+            }
+        });
+        me.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it  = new Intent(FamilyTreeActivity.this,I.class);
+                startActivity(it);
+            }
+        });
 //        initView();
 
 
