@@ -88,6 +88,9 @@
         <activity
             android:name=".I"
             android:label="@string/title_activity_I"></activity>
+        <activity
+            android:name=".FamilyTreeActivity"
+            android:label="FamilyTreeActivity"></activity>
         <!-- <activity -->
         <!-- android:name=".SettingsActivity" -->
         <!-- android:label="@string/title_activity_settings" > -->

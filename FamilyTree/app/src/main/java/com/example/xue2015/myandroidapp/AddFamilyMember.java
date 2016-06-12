@@ -16,7 +16,7 @@ public class AddFamilyMember extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_add_family_member);
 
-        Titlebar tb = (Titlebar) findViewById(R.id.familyTreeTitle);
+        Titlebar tb = (Titlebar) findViewById(R.id.addFamilyLayoutTitle);
         TextView tv = (TextView) tb.findViewById(R.id.textAxtionBarTitle);
         tv.setText("添加成员");
         tb.hideLeft();
