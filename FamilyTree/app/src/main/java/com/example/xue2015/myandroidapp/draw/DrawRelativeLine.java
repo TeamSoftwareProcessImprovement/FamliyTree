@@ -16,6 +16,57 @@ public class DrawRelativeLine extends View{
     public float secondLeft;
     public float secondTop;
 
+    public float childLeft;
+    public float childTop;
+
+    public float getFirstLeft() {
+        return firstLeft;
+    }
+
+    public float getFirstTop() {
+        return firstTop;
+    }
+
+    public float getSecondLeft() {
+        return secondLeft;
+    }
+
+    public float getSecondTop() {
+        return secondTop;
+    }
+
+    public float getChildLeft() {
+        return childLeft;
+    }
+
+    public float getChildTop() {
+        return childTop;
+    }
+
+    public void setFirstLeft(float firstLeft) {
+        this.firstLeft = firstLeft;
+    }
+
+    public void setFirstTop(float firstTop) {
+        this.firstTop = firstTop;
+    }
+
+    public void setSecondLeft(float secondLeft) {
+        this.secondLeft = secondLeft;
+    }
+
+    public void setSecondTop(float secondTop) {
+        this.secondTop = secondTop;
+    }
+
+    public void setChildLeft(float childLeft) {
+        this.childLeft = childLeft;
+    }
+
+    public void setChildTop(float childTop) {
+        this.childTop = childTop;
+    }
+
     public DrawRelativeLine(Context context){
         super(context);
     }
@@ -25,7 +76,9 @@ public class DrawRelativeLine extends View{
     }
 
     public void onDraw(Canvas canvas){
-
+        float childLeftPos = childLeft;
+        float childTopPos = childTop;
+        drawParentLine(canvas,childLeftPos,childTopPos);
     }
 
     public void drawLineSameDegree(Canvas canvas){
@@ -33,6 +86,17 @@ public class DrawRelativeLine extends View{
         paintLine.setStrokeWidth(4);
         paintLine.setColor(Color.GRAY);
         canvas.drawLine(firstLeft,firstTop,secondLeft,secondTop,paintLine);
+    }
+
+    public void drawParentLine(Canvas canvas,float childLeft, float childTop){
+        Paint paint = new Paint();
+        paint.setColor(Color.GRAY);
+        paint.setStrokeWidth(4);
+
+        canvas.drawLine(childLeft+100 ,childTop,childLeft+100, childTop-25,paint);
+        canvas.drawLine(childLeft-50 ,childTop-25,childLeft+250, childTop-25,paint);
+        canvas.drawLine(childLeft-50 ,childTop-25,childLeft-50, childTop-70,paint);
+        canvas.drawLine(childLeft+250 ,childTop-25,childLeft+250, childTop-70,paint);
     }
 
 }

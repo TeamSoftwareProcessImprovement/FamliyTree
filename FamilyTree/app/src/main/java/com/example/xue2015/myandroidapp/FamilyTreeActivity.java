@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.example.xue2015.myandroidapp.draw.DrawRelativeLine;
 import com.example.xue2015.myandroidapp.draw.DrawView;
 import com.example.xue2015.myandroidapp.draw.FamilyNode;
 
@@ -100,10 +101,15 @@ public class FamilyTreeActivity extends Activity {
         motherDraw.setLeftPos(motherLeft);
         motherDraw.setTopPos(motherTop);
 
+        DrawRelativeLine drawRelativeLine = new DrawRelativeLine(this);
+        drawRelativeLine.setChildLeft(childLeft);
+        drawRelativeLine.setChildTop(childTop);
+
         //add into FL
         FrameLayout.LayoutParams tparams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         fl.addView(fatherDraw,tparams);
         fl.addView(motherDraw,tparams);
+        fl.addView(drawRelativeLine,tparams);
     }
 
 }
