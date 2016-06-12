@@ -2,6 +2,7 @@ package com.example.xue2015.myandroidapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.example.xue2015.myandroidapp.draw.DrawView;
+import com.example.xue2015.myandroidapp.draw.FamilyNode;
 
 public class FamilyTreeActivity extends Activity {
     private Button addFamilyButton;
@@ -21,6 +23,7 @@ public class FamilyTreeActivity extends Activity {
     private float screemHeight;
     private float initTop;
     private float initLeft;
+    private FrameLayout fl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,19 +57,24 @@ public class FamilyTreeActivity extends Activity {
             }
         });
 
-        //FrameLayout add DrawView
-        FrameLayout fl = (FrameLayout) findViewById(R.id.familyTreeFrameLayout);
-        drawInitNode(fl);
-
-    }
-
-    public void drawInitNode(FrameLayout fl){
         ///get the width and height of the screen
         WindowManager wm = this.getWindowManager();
         screemHeight = wm.getDefaultDisplay().getHeight();
         screemWidth = wm.getDefaultDisplay().getWidth();
         initLeft = screemWidth/2-100;
         initTop = screemHeight - 450;
+
+        //FrameLayout add DrawView
+        fl = (FrameLayout) findViewById(R.id.familyTreeFrameLayout);
+        drawInitNode();
+        drawParentNode(initLeft,initTop);
+
+//        drawParentNode(600,600);
+
+    }
+
+    public void drawInitNode(){
+
 
         DrawView dw = new DrawView(this);
         dw.setLeftPos(initLeft);
@@ -75,8 +83,27 @@ public class FamilyTreeActivity extends Activity {
         fl.addView(dw,tparams);
     }
 
-    public void drawParentNode(){
+    public void drawParentNode(float childLeft, float childTop){
+        //param should be the FamilyNode
 
+        //specify the parentNode pos
+        float fatherLeft = childLeft + 100 - 150 -100;
+        float fatherTop = childTop - 50 - 50 - 250;
+        float motherLeft = fatherLeft + 300;
+        float motherTop = fatherTop;
+
+        DrawView fatherDraw = new DrawView(this);
+        fatherDraw.setTopPos(fatherTop);
+        fatherDraw.setLeftPos(fatherLeft);
+
+        DrawView motherDraw = new DrawView(this);
+        motherDraw.setLeftPos(motherLeft);
+        motherDraw.setTopPos(motherTop);
+
+        //add into FL
+        FrameLayout.LayoutParams tparams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        fl.addView(fatherDraw,tparams);
+        fl.addView(motherDraw,tparams);
     }
 
 }
