@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 import com.example.xue2015.myandroidapp.draw.DrawRelativeLine;
 import com.example.xue2015.myandroidapp.draw.DrawView;
+import com.example.xue2015.myandroidapp.draw.FamilyInfo;
+import com.example.xue2015.myandroidapp.draw.FamilyMember;
 import com.example.xue2015.myandroidapp.draw.FamilyNode;
 
 public class FamilyTreeActivity extends Activity {
@@ -26,22 +28,15 @@ public class FamilyTreeActivity extends Activity {
     private float initTop;
     private float initLeft;
     private FrameLayout fl;
-//    private ScrollView sv;
+//    private
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_family_tree);
-
-        Titlebar tb = (Titlebar) findViewById(R.id.familyTreeTitle);
-        TextView tv = (TextView) tb.findViewById(R.id.textAxtionBarTitle);
-        tv.setText("家谱树");
-        tb.hideLeft();
-        tb.hideRight();
-
-//        initView();
-
+        //init TitleBar
+        initTitle();
 
         ///get the width and height of the screen
         WindowManager wm = this.getWindowManager();
@@ -52,43 +47,43 @@ public class FamilyTreeActivity extends Activity {
 
         //FrameLayout add DrawView
         fl = (FrameLayout) findViewById(R.id.familyTreeFrameLayout);
-        //ScrollView
-//        sv = (ScrollView) findViewById(R.id.familyTreeScrollView);
+
         drawInitNode();
-
         drawParentNode(initLeft,initTop);
-
-//        drawParentNode(initLeft + 100 - 150 -100 +300,initTop - 50 - 50 - 250);
-
-
 
 
 
         addFamilyButton = (Button) findViewById(R.id.addFamilyButton);
-        deleteFamilyButton = (Button) findViewById(R.id.deleteFamilyButton);
 
         addFamilyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //add Family Menber
-//                Intent it  = new Intent(FamilyTreeActivity.this,AddFamilyMember.class);
-//                startActivity(it);
-                drawParentNode(initLeft + 100 - 150 -100 +300,initTop - 50 - 50 - 250);
+                Intent it  = new Intent(FamilyTreeActivity.this,AddFamilyMember.class);
+                startActivity(it);
+
+//                drawParentNode(initLeft + 100 - 150 -100 +300,initTop - 50 - 50 - 250);
             }
         });
 
-        deleteFamilyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //delete Family Memeber
-            }
-        });
+
+    }
+
+    public void initTitle(){
+        Titlebar tb = (Titlebar) findViewById(R.id.familyTreeTitle);
+        TextView tv = (TextView) tb.findViewById(R.id.textAxtionBarTitle);
+        tv.setText("家谱树");
+        tb.hideLeft();
+        tb.hideRight();
     }
 
     public void drawInitNode(){
         DrawView dw = new DrawView(this);
         dw.setLeftPos(initLeft);
         dw.setTopPos(initTop);
+
+//        dw.setGeneration(fm.getGender());
+//        dw.setName(fm.getName());
         dw.setGeneration("Me");
         dw.setName("XueYifei");
         FrameLayout.LayoutParams tparams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -98,6 +93,7 @@ public class FamilyTreeActivity extends Activity {
 
     public void drawParentNode(float childLeft, float childTop){
         //param should be the FamilyNode
+//        FamilyMember fm = (FamilyMember) getIntent().getSerializableExtra(AddFamilyMember.ADD_MEM);
 
         //specify the parentNode pos
         float fatherLeft = childLeft + 100 - 150 -100;
@@ -122,6 +118,9 @@ public class FamilyTreeActivity extends Activity {
         DrawView fatherDraw = new DrawView(this);
         fatherDraw.setTopPos(fatherTop);
         fatherDraw.setLeftPos(fatherLeft);
+
+//        fatherDraw.setGeneration(fm.getGender());
+//        fatherDraw.setName(fm.getName());
         fatherDraw.setGeneration("Father");
         fatherDraw.setName("XueYanGui");
 

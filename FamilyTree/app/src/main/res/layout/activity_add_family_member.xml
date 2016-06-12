@@ -41,6 +41,7 @@
             android:layout_height="match_parent"
             >
             <TextView
+                android:id="@+id/addNameText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -80,6 +81,7 @@
             android:layout_height="match_parent"
             >
             <TextView
+                android:id="@+id/addAgeText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -118,13 +120,14 @@
             android:layout_height="match_parent"
             >
             <TextView
+                android:id="@+id/addGenerationText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginRight="20dp"
                 android:textSize="20dp"
                 android:textColor="#c9c9c9"
-                android:text="我"/>
+                android:text="3"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -156,6 +159,7 @@
             android:layout_height="match_parent"
             >
             <TextView
+                android:id="@+id/addGenderText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -194,6 +198,7 @@
             android:layout_height="match_parent"
             >
             <TextView
+                android:id="@+id/addJobText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -232,6 +237,7 @@
             android:layout_height="match_parent"
             >
             <TextView
+                android:id="@+id/addDescriptionText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"

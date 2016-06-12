@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.xue2015.myandroidapp.draw.FamilyInfo;
 import com.example.xue2015.myandroidapp.view.DrawerView;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
@@ -32,7 +33,10 @@ public class OthersActivity extends Activity {
         initBottomBar();
         RelativeLayout rl = (RelativeLayout) findViewById(R.id.title_bar);
         TextView title = (TextView) rl.findViewById(R.id.title);
+//        FamilyInfo fi = (FamilyInfo)getApplicationContext();
+
         title.setText("精彩推送");
+//        title.setText(fi.getMe().getAge());
 
         initView();
         initSlidingMenu();

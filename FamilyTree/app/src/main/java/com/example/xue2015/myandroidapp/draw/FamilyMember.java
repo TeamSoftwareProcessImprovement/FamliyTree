@@ -1,10 +1,12 @@
 package com.example.xue2015.myandroidapp.draw;
 
+import java.io.Serializable;
+
 /**
  * Created by Xue on 2016/6/11.
  */
 
-public class FamilyMember {
+public class FamilyMember implements Serializable{
     public String name;
     public String generation;
     public String gender;
