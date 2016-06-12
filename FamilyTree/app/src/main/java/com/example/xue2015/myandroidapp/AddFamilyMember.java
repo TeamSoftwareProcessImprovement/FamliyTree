@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -31,6 +32,7 @@ public class AddFamilyMember extends Activity {
         LinearLayout addGenderClick = (LinearLayout) findViewById(R.id.addGenderClick);
         LinearLayout addJobClick = (LinearLayout) findViewById(R.id.addJobClick);
         LinearLayout addDescriptionClick = (LinearLayout) findViewById(R.id.addDescriptionClick);
+        Button addFamilyOKButton = (Button) findViewById(R.id.addFamilyOKButton);
 
         addNameClick.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +73,13 @@ public class AddFamilyMember extends Activity {
             @Override
             public void onClick(View v) {
                 //intent to addDescriptionClick
+            }
+        });
+
+        addFamilyOKButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // add family
             }
         });
 

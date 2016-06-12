@@ -10,6 +10,7 @@ import android.view.View;
 /**
  * Created by Xue on 2016/6/12.
  */
+
 public class DrawRelativeLine extends View{
     public float firstLeft;
     public float firstTop;

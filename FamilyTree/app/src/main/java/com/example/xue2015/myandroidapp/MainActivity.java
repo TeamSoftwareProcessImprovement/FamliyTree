@@ -537,9 +537,6 @@ public class MainActivity extends FragmentActivity implements
             public void onClick(View v) {
                 //点击确定事件的触发
                 alertDialog.cancel();
-
-
-
             }
         });
 

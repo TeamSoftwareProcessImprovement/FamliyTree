@@ -19,6 +19,24 @@ import com.example.xue2015.myandroidapp.R;
 public class DrawView extends View{
     public float leftPos = 40;
     public float topPos = 40;
+    public String name;
+    public String generation;
+
+    public String getName() {
+        return name;
+    }
+
+    public String getGeneration() {
+        return generation;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setGeneration(String generation) {
+        this.generation = generation;
+    }
 
     public float getTopPos() {
         return topPos;
@@ -110,10 +128,10 @@ public class DrawView extends View{
         //add Text
         Paint paintText = new Paint();
         paintText.setTextSize(20);
-        String name = "XueYifei";
-        String identity = "Father";
+//        name = "XueYifei";
+//        generation = "Father";
 
-        canvas.drawText(identity,(left + right)/2 - paintText.measureText(identity)/2 ,bottom+30,paintText);
+        canvas.drawText(generation,(left + right)/2 - paintText.measureText(generation)/2 ,bottom+30,paintText);
         canvas.drawText(name,(left + right)/2 - paintText.measureText(name)/2,bottom+65,paintText);
     }
 

@@ -41,24 +41,7 @@ public class FamilyTreeActivity extends Activity {
         tb.hideRight();
 
 //        initView();
-        addFamilyButton = (Button) findViewById(R.id.addFamilyButton);
-        deleteFamilyButton = (Button) findViewById(R.id.deleteFamilyButton);
 
-        addFamilyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //add Family Menber
-                Intent it  = new Intent(FamilyTreeActivity.this,AddFamilyMember.class);
-                startActivity(it);
-            }
-        });
-
-        deleteFamilyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //delete Family Memeber
-            }
-        });
 
         ///get the width and height of the screen
         WindowManager wm = this.getWindowManager();
@@ -75,14 +58,39 @@ public class FamilyTreeActivity extends Activity {
 
         drawParentNode(initLeft,initTop);
 
-        drawParentNode(initLeft + 100 - 150 -100 +300,initTop - 50 - 50 - 250);
+//        drawParentNode(initLeft + 100 - 150 -100 +300,initTop - 50 - 50 - 250);
 
+
+
+
+
+        addFamilyButton = (Button) findViewById(R.id.addFamilyButton);
+        deleteFamilyButton = (Button) findViewById(R.id.deleteFamilyButton);
+
+        addFamilyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //add Family Menber
+//                Intent it  = new Intent(FamilyTreeActivity.this,AddFamilyMember.class);
+//                startActivity(it);
+                drawParentNode(initLeft + 100 - 150 -100 +300,initTop - 50 - 50 - 250);
+            }
+        });
+
+        deleteFamilyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //delete Family Memeber
+            }
+        });
     }
 
     public void drawInitNode(){
         DrawView dw = new DrawView(this);
         dw.setLeftPos(initLeft);
         dw.setTopPos(initTop);
+        dw.setGeneration("Me");
+        dw.setName("XueYifei");
         FrameLayout.LayoutParams tparams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         fl.addView(dw,tparams);
 //        sv.addView(fl);
@@ -114,10 +122,14 @@ public class FamilyTreeActivity extends Activity {
         DrawView fatherDraw = new DrawView(this);
         fatherDraw.setTopPos(fatherTop);
         fatherDraw.setLeftPos(fatherLeft);
+        fatherDraw.setGeneration("Father");
+        fatherDraw.setName("XueYanGui");
 
         DrawView motherDraw = new DrawView(this);
         motherDraw.setLeftPos(motherLeft);
         motherDraw.setTopPos(motherTop);
+        motherDraw.setGeneration("Mother");
+        motherDraw.setName("HeLiLin");
 
 //        drawRelativeLine.setDrawMode(0);
         drawRelativeLine.setChildLeft(childLeft);

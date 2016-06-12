@@ -3,6 +3,7 @@ package com.example.xue2015.myandroidapp.draw;
 /**
  * Created by MyPC on 2016/6/12.
  */
+
 public class FamilyNode {
     private int id;
     private FamilyMember member;
