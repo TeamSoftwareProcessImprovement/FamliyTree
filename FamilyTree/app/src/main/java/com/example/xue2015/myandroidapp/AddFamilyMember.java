@@ -74,10 +74,5 @@ public class AddFamilyMember extends Activity {
             }
         });
 
-
-
-
-
-
     }
 }
