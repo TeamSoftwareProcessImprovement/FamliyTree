@@ -501,7 +501,8 @@ public class MainActivity extends FragmentActivity implements
                 startActivity(it);
                 break;
             case R.id.main_page_bottom_button_pointshop:
-                it.setClass(this, PointshopActivity.class);
+//                it.setClass(this, PointshopActivity.class);
+                it.setClass(this, FamilyTreeActivity.class);
                 startActivity(it);
                 break;
             case R.id.main_page_bottom_button_push:
