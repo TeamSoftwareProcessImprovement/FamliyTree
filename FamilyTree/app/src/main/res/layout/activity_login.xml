@@ -23,7 +23,7 @@
             android:layout_weight="1"
             android:background="@drawable/round_corner_inputbox"
             android:ems="10"
-            android:hint="@string/phone_number"
+            android:hint="姓名"
             android:inputType="phone" >
 
             <requestFocus />
@@ -58,16 +58,16 @@
             android:onClick="onClickLogin"
             android:text="@string/login" />
 
-        <TextView
-            android:id="@+id/iForgetMyPsw"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
-            android:layout_weight="1"
-            android:clickable="true"
-            android:gravity="center"
-            android:onClick="onClickIForgetMyPsw"
-            android:text="@string/i_forget_password" />
+        <!--<TextView-->
+            <!--android:id="@+id/iForgetMyPsw"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="200dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:clickable="true"-->
+            <!--android:gravity="center"-->
+            <!--android:onClick="onClickIForgetMyPsw"-->
+            <!--android:text="@string/i_forget_password" />-->
     </LinearLayout>
 
 </LinearLayout>

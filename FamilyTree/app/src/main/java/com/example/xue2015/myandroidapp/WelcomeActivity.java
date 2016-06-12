@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -42,44 +43,62 @@ public class WelcomeActivity extends Activity implements ViewPager.OnPageChangeL
         ActivityCollector.addActivity(this);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_welcome);
-        final ArrayList<View> aViews = new ArrayList<View>();
-        LayoutInflater If = LayoutInflater.from(this);
-        vg = (ViewGroup) If.inflate(R.layout.activity_welcome, null);
-        View v1 = If.inflate(R.layout.img1, null);
-        View v2 = If.inflate(R.layout.img2, null);
-        View v3 = If.inflate(R.layout.img3, null);
-        aViews.add(v1);
-        aViews.add(v2);
-        aViews.add(v3);
-        vp = (ViewPager) vg.findViewById(R.id.viewpager);
-        ll = (LinearLayout) vg.findViewById(R.id.group);
-
-        images = new ImageView[aViews.size()];
-        for (int i = 0; i < images.length; i++) {
-            img = new ImageView(this);
-            img.setLayoutParams(new ViewGroup.LayoutParams(40, 40));
-            img.setPadding(40, 0, 40, 0);
-            if (i == 0)
-                img.setBackgroundResource(R.drawable.u10);
-            else
-                img.setBackgroundResource(R.drawable.u8);
-            images[i] = img;
-            ll.addView(images[i]);
-        }
-
-        pa = new MyPagerAdapter(aViews);
-
-        setContentView(vg);
-        vp.setAdapter(pa);
-        vp.setOnPageChangeListener(this);
-        // vp.setCurrentItem(Integer.MAX_VALUE/2);//默认在中间，使用户看不到边界，现在还有些问题
-        handler.sendEmptyMessageDelayed(MyPagerHandler.MSG_UPDATE_IMAGE,
-                MyPagerHandler.MSG_DELAY);
-        TitleLayout tl = (TitleLayout) this.findViewById(R.id.mainActionBar);
-        TextView title = (TextView) tl.findViewById(R.id.textActionBarTitle);
-        title.setText("问卷调查APP");
-        tl.hideLeftButtun();
-        tl.hideRightButton();
+        Button login = (Button) findViewById(R.id.buttonLogin);
+        Button register = (Button) findViewById(R.id.buttonRegister);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent();
+                it.setClass(WelcomeActivity.this, LoginActivity.class);
+                startActivity(it);
+            }
+        });
+        register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent();
+                it.setClass(WelcomeActivity.this, RegisterActivity.class);
+                startActivity(it);
+            }
+        });
+//        final ArrayList<View> aViews = new ArrayList<View>();
+//        LayoutInflater If = LayoutInflater.from(this);
+//        vg = (ViewGroup) If.inflate(R.layout.activity_welcome, null);
+//        View v1 = If.inflate(R.layout.img1, null);
+//        View v2 = If.inflate(R.layout.img2, null);
+//        View v3 = If.inflate(R.layout.img3, null);
+//        aViews.add(v1);
+//        aViews.add(v2);
+//        aViews.add(v3);
+//        vp = (ViewPager) vg.findViewById(R.id.viewpager);
+//        ll = (LinearLayout) vg.findViewById(R.id.group);
+//
+//        images = new ImageView[aViews.size()];
+//        for (int i = 0; i < images.length; i++) {
+//            img = new ImageView(this);
+//            img.setLayoutParams(new ViewGroup.LayoutParams(40, 40));
+//            img.setPadding(40, 0, 40, 0);
+//            if (i == 0)
+//                img.setBackgroundResource(R.drawable.u10);
+//            else
+//                img.setBackgroundResource(R.drawable.u8);
+//            images[i] = img;
+//            ll.addView(images[i]);
+//        }
+//
+//        pa = new MyPagerAdapter(aViews);
+//
+//        setContentView(vg);
+//        vp.setAdapter(pa);
+//        vp.setOnPageChangeListener(this);
+//        // vp.setCurrentItem(Integer.MAX_VALUE/2);//默认在中间，使用户看不到边界，现在还有些问题
+//        handler.sendEmptyMessageDelayed(MyPagerHandler.MSG_UPDATE_IMAGE,
+//                MyPagerHandler.MSG_DELAY);
+//        TitleLayout tl = (TitleLayout) this.findViewById(R.id.mainActionBar);
+//        TextView title = (TextView) tl.findViewById(R.id.textActionBarTitle);
+//        title.setText("问卷调查APP");
+//        tl.hideLeftButtun();
+//        tl.hideRightButton();
     }
 
     public void onPageSelected(int arg0) {

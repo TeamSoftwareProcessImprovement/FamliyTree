@@ -11,6 +11,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -35,8 +36,45 @@ public class FamilyTreeActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_family_tree);
+
         //init TitleBar
         initTitle();
+
+
+        Titlebar tb = (Titlebar) findViewById(R.id.familyTreeTitle);
+        TextView tv = (TextView) tb.findViewById(R.id.textAxtionBarTitle);
+        tv.setText("家谱树");
+        tb.hideLeft();
+        tb.hideRight();
+
+        RelativeLayout connect = (RelativeLayout) findViewById(R.id.main_page_bottom_button_questionnairecenter);
+        RelativeLayout circle = (RelativeLayout) findViewById(R.id.main_page_bottom_button_pointshop);
+        RelativeLayout me = (RelativeLayout) findViewById(R.id.main_page_bottom_button_push);
+
+        connect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it  = new Intent(FamilyTreeActivity.this,ConnectActivity.class);
+                startActivity(it);
+            }
+        });
+        circle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it  = new Intent(FamilyTreeActivity.this,ConnectActivity.class);
+                startActivity(it);
+            }
+        });
+        me.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it  = new Intent(FamilyTreeActivity.this,I.class);
+                startActivity(it);
+            }
+        });
+//        initView();
+
+
 
         ///get the width and height of the screen
         WindowManager wm = this.getWindowManager();
