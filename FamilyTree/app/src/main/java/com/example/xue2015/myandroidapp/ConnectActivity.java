@@ -1,9 +1,12 @@
 package com.example.xue2015.myandroidapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 
 import com.example.xue2015.myandroidapp.draw.FamilyMember;
@@ -23,9 +26,9 @@ public class ConnectActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_connect);
+        setContentView(R.layout.activity_connect1);
 
-        ListView listView = (ListView) findViewById(R.id.listView2);
+        ListView listView = (ListView) findViewById(R.id.listView3);
         //List<Map<String,String>> listitems = new ArrayList<Map<String,String>>();
         setlist();
         List<String> name = Order();
@@ -40,6 +43,32 @@ public class ConnectActivity extends AppCompatActivity {
 //        SimpleAdapter adapter = new SimpleAdapter(this,listitems,R.layout.connect_items,new String[]{"name"},new int[]{R.id.connectname});
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,name1);
         listView.setAdapter(adapter);
+
+        RelativeLayout tree = (RelativeLayout) findViewById(R.id.main_page_bottom_button_mainpage1);
+        RelativeLayout circle = (RelativeLayout) findViewById(R.id.main_page_bottom_button_pointshop1);
+        RelativeLayout me = (RelativeLayout) findViewById(R.id.main_page_bottom_button_push1);
+
+        tree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it  = new Intent(ConnectActivity.this,FamilyTreeActivity.class);
+                startActivity(it);
+            }
+        });
+        circle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it  = new Intent(ConnectActivity.this,ConnectActivity.class);
+                startActivity(it);
+            }
+        });
+        me.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it  = new Intent(ConnectActivity.this,I.class);
+                startActivity(it);
+            }
+        });
 
     }
 

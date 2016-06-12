@@ -70,11 +70,11 @@ public class DrawerView implements OnClickListener{
 		feedback =(RelativeLayout)localSlidingMenu.findViewById(R.id.feedback);
 		feedback.setOnClickListener(this);
 		
-		setting =(Button)localSlidingMenu.findViewById(R.id.buttonSetting);
-		setting.setOnClickListener(this);
-		
-		exit =(Button)localSlidingMenu.findViewById(R.id.buttonExit);
-		exit.setOnClickListener(this);
+//		setting =(Button)localSlidingMenu.findViewById(R.id.buttonSetting);
+//		setting.setOnClickListener(this);
+//
+//		exit =(Button)localSlidingMenu.findViewById(R.id.buttonExit);
+//		exit.setOnClickListener(this);
 	}
 
 	@Override
@@ -96,10 +96,10 @@ public class DrawerView implements OnClickListener{
             activity.startActivity(new Intent(activity,QuestionFeedbackActivity.class));
             activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 			break;
-		case R.id.buttonSetting:
-			break;
-		case R.id.buttonExit:
-			break;
+//		case R.id.buttonSetting:
+//			break;
+//		case R.id.buttonExit:
+//			break;
 		default:
 			break;
 		}

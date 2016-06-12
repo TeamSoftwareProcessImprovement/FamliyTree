@@ -4,10 +4,10 @@
     android:orientation="vertical"
     android:background="@drawable/login">
 
-    <com.example.xue2015.myandroidapp.util.TitleLayout
-        android:id="@+id/mainActionBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    <!--<com.example.xue2015.myandroidapp.util.TitleLayout-->
+        <!--android:id="@+id/mainActionBar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
 
     <LinearLayout
         android:orientation="horizontal"

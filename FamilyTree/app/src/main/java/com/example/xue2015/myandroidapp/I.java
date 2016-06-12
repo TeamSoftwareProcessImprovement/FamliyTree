@@ -21,6 +21,32 @@ public class I extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.left_drawer_fragment);
         initView();
+
+        RelativeLayout tree = (RelativeLayout) findViewById(R.id.main_page_bottom_button_mainpage3);
+        RelativeLayout circle = (RelativeLayout) findViewById(R.id.main_page_bottom_button_pointshop3);
+        RelativeLayout connect = (RelativeLayout) findViewById(R.id.main_page_bottom_button_questionnairecenter3);
+
+        tree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it  = new Intent(I.this,FamilyTreeActivity.class);
+                startActivity(it);
+            }
+        });
+        circle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it  = new Intent(I.this,ConnectActivity.class);
+                startActivity(it);
+            }
+        });
+        connect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it  = new Intent(I.this,ConnectActivity.class);
+                startActivity(it);
+            }
+        });
     }
 
     private void initView() {
@@ -61,22 +87,22 @@ public class I extends Activity {
             }
         });
 
-        setting =(Button)findViewById(R.id.buttonSetting);
-        setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it = new Intent(I.this, SettingsActivity.class);
-                I.this.startActivity(it);
-            }
-        });
-
-        exit =(Button)findViewById(R.id.buttonExit);
-        exit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it = new Intent(I.this, MainActivity.class);
-                I.this.startActivity(it);
-            }
-        });
+//        setting =(Button)findViewById(R.id.buttonSetting);
+//        setting.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent it = new Intent(I.this, SettingsActivity.class);
+//                I.this.startActivity(it);
+//            }
+//        });
+//
+//        exit =(Button)findViewById(R.id.buttonExit);
+//        exit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent it = new Intent(I.this, MainActivity.class);
+//                I.this.startActivity(it);
+//            }
+//        });
     }
 }

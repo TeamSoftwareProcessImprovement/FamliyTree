@@ -2,14 +2,13 @@
     xmlns:myapp="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/left_drawer_item_bg_normal"
+    android:background="#000000"
     android:orientation="vertical" >
 
     <LinearLayout
         android:id="@+id/login_layout"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.0"
+        android:layout_height="41dp"
         android:minHeight="102.0dip"
         android:orientation="horizontal" >
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -145,126 +144,205 @@
         android:layout_height="0.0dip"
         android:layout_weight="1.0" >
 
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <LinearLayout
+            <RelativeLayout
+                android:id="@+id/pgc_btn"
+                style="@style/left_drawer_item_layout"
+                android:visibility="gone" >
+
+                <TextView
+                    android:id="@+id/pgc_name"
+                    style="@style/left_drawer_item_text"
+                    android:drawableLeft="@drawable/ic_drawer_pgc" />
+            </RelativeLayout>
+
+            <ImageView
+                style="@style/left_drawer_item_line"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:layout_height="0.5dip" />
 
-                <RelativeLayout
-                    android:id="@+id/pgc_btn"
-                    style="@style/left_drawer_item_layout"
-                    android:visibility="gone" >
+            <RelativeLayout
+                android:id="@+id/change_psw"
+                style="@style/left_drawer_item_layout" >
 
-                    <TextView
-                        android:id="@+id/pgc_name"
-                        style="@style/left_drawer_item_text"
-                        android:drawableLeft="@drawable/ic_drawer_pgc" />
-                </RelativeLayout>
+                <TextView
+                    style="@style/left_drawer_item_text"
+                    android:drawableLeft="@drawable/psw"
+                    android:text="@string/change_psw" />
+            </RelativeLayout>
 
-                <ImageView
-                    style="@style/left_drawer_item_line"
-                    android:layout_width="fill_parent"
-                    android:layout_height="0.5dip" />
-
-                <RelativeLayout
-                    android:id="@+id/change_psw"
-                    style="@style/left_drawer_item_layout" >
-
-                    <TextView
-                        style="@style/left_drawer_item_text"
-                        android:drawableLeft="@drawable/psw"
-                        android:text="@string/change_psw" />
-                </RelativeLayout>
-
-                <ImageView
-                    style="@style/left_drawer_item_line"
-                    android:layout_width="fill_parent"
-                    android:layout_height="0.5dip" />
-
-                <RelativeLayout
-                    android:id="@+id/my_info"
-                    style="@style/left_drawer_item_layout" >
-
-                    <TextView
-                        style="@style/left_drawer_item_text"
-                        android:drawableLeft="@drawable/left_drawer_pgc_normal"
-                        android:text="@string/my_info" />
-                </RelativeLayout>
-
-
-                <ImageView
-                    style="@style/left_drawer_item_line"
-                    android:layout_width="fill_parent"
-                    android:layout_height="0.5dip" />
-
-                <RelativeLayout
-                    android:id="@+id/my_bind"
-                    style="@style/left_drawer_item_layout" >
-
-                    <TextView
-                        style="@style/left_drawer_item_text"
-                        android:drawableLeft="@drawable/bind"
-                        android:text="@string/my_bind" />
-                </RelativeLayout>
-
-
-                <ImageView
-                    style="@style/left_drawer_item_line"
-                    android:layout_width="fill_parent"
-                    android:layout_height="0.5dip" />
-
-                <RelativeLayout
-                    android:id="@+id/feedback"
-                    style="@style/left_drawer_item_layout" >
-
-                    <TextView
-                        style="@style/left_drawer_item_text"
-                        android:drawableLeft="@drawable/feedback"
-                        android:text="@string/feedback" />
-                </RelativeLayout>
-
-                <ImageView
-                    style="@style/left_drawer_item_line"
-                    android:layout_width="fill_parent"
-                    android:layout_height="0.5dip" />
-            </LinearLayout>
-
-            <LinearLayout
+            <ImageView
+                style="@style/left_drawer_item_line"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
-                android:gravity="bottom|center_horizontal"
-                android:orientation="horizontal"
-                android:weightSum="4" >
+                android:layout_height="0.5dip" />
 
-                <Button
-                    android:id="@+id/buttonSetting"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|fill"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/setting"
-                    android:textColor="@color/left_drawer_item_text" />
+            <RelativeLayout
+                android:id="@+id/my_info"
+                style="@style/left_drawer_item_layout" >
 
-                <Button
-                    android:id="@+id/buttonExit"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|fill"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/exit"
-                    android:textColor="@color/left_drawer_item_text" />
-            </LinearLayout>
+                <TextView
+                    style="@style/left_drawer_item_text"
+                    android:drawableLeft="@drawable/left_drawer_pgc_normal"
+                    android:text="@string/my_info" />
+            </RelativeLayout>
+
+
+            <ImageView
+                style="@style/left_drawer_item_line"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip" />
+
+            <RelativeLayout
+                android:id="@+id/my_bind"
+                style="@style/left_drawer_item_layout" >
+
+                <TextView
+                    style="@style/left_drawer_item_text"
+                    android:drawableLeft="@drawable/bind"
+                    android:text="@string/my_bind" />
+            </RelativeLayout>
+
+
+            <ImageView
+                style="@style/left_drawer_item_line"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip" />
+
+            <RelativeLayout
+                android:id="@+id/feedback"
+                style="@style/left_drawer_item_layout" >
+
+                <TextView
+                    style="@style/left_drawer_item_text"
+                    android:drawableLeft="@drawable/feedback"
+                    android:text="@string/feedback" />
+            </RelativeLayout>
+
+            <ImageView
+                style="@style/left_drawer_item_line"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dip" />
         </LinearLayout>
-    </ScrollView>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:gravity="bottom|center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="4" ><LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/linearLayout">
+
+            <RelativeLayout
+                android:id="@+id/main_page_bottom_button_mainpage3"
+                style="@style/main_page_bottom_button"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0"
+                android:clickable="false" >
+
+                <TextView
+                    style="@style/main_page_bottom_text"
+                    android:layout_centerInParent="true"
+                    android:text="家谱树" />
+            </RelativeLayout>
+
+            <ImageView
+                style="@style/left_drawer_item_line"
+                android:layout_width="0.5dip"
+                android:layout_height="fill_parent" />
+
+            <RelativeLayout
+                android:id="@+id/main_page_bottom_button_questionnairecenter3"
+                style="@style/main_page_bottom_button"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0" >
+
+                <TextView
+                    style="@style/main_page_bottom_text"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/connect1"
+                    android:text="通讯录" />
+            </RelativeLayout>
+
+            <ImageView
+                style="@style/left_drawer_item_line"
+                android:layout_width="0.5dip"
+                android:layout_height="fill_parent" />
+
+            <RelativeLayout
+                android:id="@+id/main_page_bottom_button_pointshop3"
+                style="@style/main_page_bottom_button"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0" >
+
+                <TextView
+                    style="@style/main_page_bottom_text"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/circle1"
+                    android:text="家族圈" />
+            </RelativeLayout>
+
+            <ImageView
+                style="@style/left_drawer_item_line"
+                android:layout_width="0.5dip"
+                android:layout_height="fill_parent" />
+
+            <RelativeLayout
+                android:id="@+id/main_page_bottom_button_push1"
+                style="@style/main_page_bottom_button"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.0" >
+
+                <TextView
+                    style="@style/main_page_bottom_text"
+                    android:layout_centerInParent="true"
+                    android:text="我" />
+            </RelativeLayout>
+        </LinearLayout>
+            <!--<Button-->
+                <!--android:id="@+id/buttonSetting"-->
+                <!--style="?android:attr/borderlessButtonStyle"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical|fill"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center"-->
+                <!--android:text="@string/setting"-->
+                <!--android:textColor="@color/left_drawer_item_text" />-->
+
+            <!--<Button-->
+                <!--android:id="@+id/buttonExit"-->
+                <!--style="?android:attr/borderlessButtonStyle"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center_vertical|fill"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center"-->
+                <!--android:text="@string/exit"-->
+                <!--android:textColor="@color/left_drawer_item_text" />-->
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>
