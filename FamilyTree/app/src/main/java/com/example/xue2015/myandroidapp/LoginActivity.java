@@ -10,8 +10,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.xue2015.myandroidapp.draw.FamilyMember;
 import com.example.xue2015.myandroidapp.util.ActivityCollector;
 import com.example.xue2015.myandroidapp.util.TitleLayout;
 
@@ -64,6 +66,11 @@ public class LoginActivity extends Activity {
     public void onClickLogin(View v) {
         Intent it = new Intent();
       //  it.setClass(this, MainActivity.class);
+
+        EditText editLoginPhoneNum = (EditText) findViewById(R.id.editLoginPhoneNum);
+        FamilyMember familyMember = new FamilyMember();
+        familyMember.setName(String.valueOf(editLoginPhoneNum.getText()));
+        FamilyTreeActivity.FAM_MEM = familyMember;
         it.setClass(this, FamilyTreeActivity.class);
         startActivity(it);
         ActivityCollector.finishAll();

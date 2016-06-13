@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.xue2015.myandroidapp.draw.FamilyInfo;
 import com.example.xue2015.myandroidapp.draw.FamilyMember;
+import com.example.xue2015.myandroidapp.draw.FamilyNode;
 
 public class AddFamilyMember extends Activity {
     public TextView addNameText;
@@ -112,11 +113,19 @@ public class AddFamilyMember extends Activity {
                 addFamilyMember.setGeneration((String) addGenerationText.getText());
                 addFamilyMember.setGender((String)addGenderText.getText());
                 addFamilyMember.setJob((String)addJobText.getText());
+
+                FamilyTreeActivity.ADD_MEM = addFamilyMember;
+                FamilyTreeActivity.FAM_FLAG ++;
+
+                FamilyNode fn = new FamilyNode();
+                fn.setMember(addFamilyMember);
+                FamilyTreeActivity.FAM_NODES.add(fn);
+
                 Intent it  = new Intent(AddFamilyMember.this,FamilyTreeActivity.class);
-                Bundle mBundle = new Bundle();
-                mBundle.putSerializable(ADD_MEM,addFamilyMember);
-                mBundle.putSerializable(ADD_FLAG,1);
-                it.putExtras(mBundle);
+//                Bundle mBundle = new Bundle();
+//                mBundle.putSerializable(ADD_MEM,addFamilyMember);
+//                mBundle.putSerializable(ADD_FLAG,1);
+//                it.putExtras(mBundle);
                 startActivity(it);
             }
         });
