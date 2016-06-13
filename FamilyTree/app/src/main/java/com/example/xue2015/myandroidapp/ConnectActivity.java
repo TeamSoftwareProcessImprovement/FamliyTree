@@ -34,7 +34,7 @@ public class ConnectActivity extends Activity {
 
         Titlebar tb = (Titlebar) findViewById(R.id.familyTreeConnectionTitle);
         TextView tv = (TextView) tb.findViewById(R.id.textAxtionBarTitle);
-        tv.setText("家谱树");
+        tv.setText("通讯录");
 //        tb.hideLeft();
         tb.hideRight();
 
@@ -104,6 +104,9 @@ public class ConnectActivity extends Activity {
         node2.setId(2);
         node3.setMember(member3);
         node3.setId(3);
+
+
+
         list.add(node1);
         list.add(node2);
         list.add(node3);

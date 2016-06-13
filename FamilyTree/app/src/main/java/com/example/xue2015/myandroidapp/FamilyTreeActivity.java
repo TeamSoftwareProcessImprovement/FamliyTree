@@ -38,6 +38,7 @@ public class FamilyTreeActivity extends Activity {
     public static FamilyMember ADD_MEM;
     public static List<FamilyNode> FAM_NODES = new ArrayList<FamilyNode>();
 //    public static FamilyNode FAM_NODES[] = new FamilyNode[5];
+    public static FamilyMember THI_MEM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +63,8 @@ public class FamilyTreeActivity extends Activity {
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                List<FamilyNode> connectFanilyList = new ArrayList<FamilyNode>();
+                connectFanilyList = FAM_NODES;
                 Intent it  = new Intent(FamilyTreeActivity.this,ConnectActivity.class);
                 startActivity(it);
             }
@@ -130,7 +133,13 @@ public class FamilyTreeActivity extends Activity {
         temp.setId(1);
         temp.setMember(FamilyTreeActivity.FAM_MEM);
 //        FamilyTreeActivity.FAM_NODES[0] = temp;
-        FamilyTreeActivity.FAM_NODES.add(temp);
+        if (!FamilyTreeActivity.FAM_NODES.contains(temp)){
+            FamilyTreeActivity.FAM_NODES.add(temp);
+        }
+
+//        FamilyNode temp1 = new FamilyNode();
+//        temp1.setMember(ADD_MEM);
+//        FamilyTreeActivity.FAM_NODES.add(temp1);
     }
 
 
@@ -195,24 +204,41 @@ public class FamilyTreeActivity extends Activity {
         motherDraw.setLeftPos(motherLeft);
         motherDraw.setTopPos(motherTop);
 
-
-        if(FamilyTreeActivity.ADD_MEM.getGender().equals("男")){
-            fatherDraw.setGeneration("Father");
-            fatherDraw.setName(FamilyTreeActivity.ADD_MEM.getName());
-            motherDraw.setGeneration("Mother");
-            motherDraw.setName("Name");
-        }else if(FamilyTreeActivity.ADD_MEM.getGender().equals("女")){
-            fatherDraw.setGeneration("Father");
-            fatherDraw.setName("Name");
-            motherDraw.setGeneration("Mother");
-            motherDraw.setName(FamilyTreeActivity.ADD_MEM.getName());
-        }else{
-            fatherDraw.setGeneration("Father");
-            fatherDraw.setName("Name");
-            motherDraw.setGeneration("Mother");
-            motherDraw.setName("Name");
+        if(FamilyTreeActivity.FAM_FLAG == 2){
+            if(FamilyTreeActivity.ADD_MEM.getGender().equals("男")){
+                fatherDraw.setGeneration("Father");
+                fatherDraw.setName(FamilyTreeActivity.ADD_MEM.getName());
+                motherDraw.setGeneration("Mother");
+                motherDraw.setName("Name");
+            }else if(FamilyTreeActivity.ADD_MEM.getGender().equals("女")){
+                fatherDraw.setGeneration("Father");
+                fatherDraw.setName("Name");
+                motherDraw.setGeneration("Mother");
+                motherDraw.setName(FamilyTreeActivity.ADD_MEM.getName());
+            }else{
+                fatherDraw.setGeneration("Father");
+                fatherDraw.setName("Name");
+                motherDraw.setGeneration("Mother");
+                motherDraw.setName("Name");
+            }
+        }else if(FamilyTreeActivity.FAM_FLAG == 3){
+            if(FamilyTreeActivity.THI_MEM.getGender().equals("男")){
+                fatherDraw.setGeneration("Grandpa");
+                fatherDraw.setName(FamilyTreeActivity.THI_MEM.getName());
+                motherDraw.setGeneration("Grandma");
+                motherDraw.setName("Name");
+            }else if(FamilyTreeActivity.THI_MEM.getGender().equals("女")){
+                fatherDraw.setGeneration("Grandpa");
+                fatherDraw.setName("Name");
+                motherDraw.setGeneration("Grandma");
+                motherDraw.setName(FamilyTreeActivity.THI_MEM.getName());
+            }else{
+                fatherDraw.setGeneration("Grandpa");
+                fatherDraw.setName("Name");
+                motherDraw.setGeneration("Grandma");
+                motherDraw.setName("Name");
+            }
         }
-
 //        drawRelativeLine.setDrawMode(0);
         drawRelativeLine.setChildLeft(childLeft);
         drawRelativeLine.setChildTop(childTop);
@@ -225,5 +251,6 @@ public class FamilyTreeActivity extends Activity {
 
 //        sv.addView(fl);
     }
+
 
 }

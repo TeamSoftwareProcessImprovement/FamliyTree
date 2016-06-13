@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -14,12 +15,12 @@ import com.example.xue2015.myandroidapp.draw.FamilyMember;
 import com.example.xue2015.myandroidapp.draw.FamilyNode;
 
 public class AddFamilyMember extends Activity {
-    public TextView addNameText;
-    public TextView addAgeText;
-    public TextView addGenerationText;
-    public TextView addJobText;
-    public TextView addGenderText;
-    public TextView addDescriptionText;
+    public EditText addNameText;
+    public EditText addAgeText;
+    public EditText addGenerationText;
+    public EditText addJobText;
+    public EditText addGenderText;
+    public EditText addDescriptionText;
 
     public FamilyMember addFamilyMember;
     public  final static String ADD_MEM = "com.xue.addMem.ser";
@@ -44,12 +45,12 @@ public class AddFamilyMember extends Activity {
     }
 
     public void initView(){
-        addNameText = (TextView) findViewById(R.id.addNameText);
-        addAgeText = (TextView) findViewById(R.id.addAgeText);
-        addGenerationText = (TextView) findViewById(R.id.addGenerationText);
-        addJobText = (TextView) findViewById(R.id.addJobText);
-        addGenderText = (TextView) findViewById(R.id.addGenderText);
-        addDescriptionText = (TextView) findViewById(R.id.addDescriptionText);
+        addNameText = (EditText) findViewById(R.id.addNameText);
+        addAgeText = (EditText) findViewById(R.id.addAgeText);
+        addGenerationText = (EditText) findViewById(R.id.addGenerationText);
+        addJobText = (EditText) findViewById(R.id.addJobText);
+        addGenderText = (EditText) findViewById(R.id.addGenderText);
+        addDescriptionText = (EditText) findViewById(R.id.addDescriptionText);
 
 
         LinearLayout addNameClick = (LinearLayout) findViewById(R.id.addNameClick);
@@ -107,14 +108,20 @@ public class AddFamilyMember extends Activity {
             public void onClick(View v) {
             // add family
 
-                addFamilyMember.setName((String) addNameText.getText());
-                addFamilyMember.setAge(Integer.parseInt((String)addAgeText.getText()));
-//                addFamilyMember.setBrithday();
-                addFamilyMember.setGeneration((String) addGenerationText.getText());
-                addFamilyMember.setGender((String)addGenderText.getText());
-                addFamilyMember.setJob((String)addJobText.getText());
 
-                FamilyTreeActivity.ADD_MEM = addFamilyMember;
+                addFamilyMember.setName((String) addNameText.getText().toString());
+                addFamilyMember.setAge(Integer.parseInt((String)addAgeText.getText().toString()));
+//                addFamilyMember.setBrithday();
+                addFamilyMember.setGeneration((String) addGenerationText.getText().toString());
+                addFamilyMember.setGender((String)addGenderText.getText().toString());
+                addFamilyMember.setJob((String)addJobText.getText().toString());
+
+                if(FamilyTreeActivity.FAM_FLAG == 1){
+                    FamilyTreeActivity.ADD_MEM = addFamilyMember;
+                }
+                if(FamilyTreeActivity.FAM_FLAG == 2){
+                    FamilyTreeActivity.THI_MEM = addFamilyMember;
+                }
                 FamilyTreeActivity.FAM_FLAG ++;
 
                 FamilyNode fn = new FamilyNode();

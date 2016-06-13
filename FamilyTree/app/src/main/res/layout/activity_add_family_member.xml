@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             >
-            <TextView
+            <EditText
                 android:id="@+id/addNameText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -80,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             >
-            <TextView
+            <EditText
                 android:id="@+id/addAgeText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -119,7 +119,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             >
-            <TextView
+            <EditText
                 android:id="@+id/addGenerationText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -158,7 +158,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             >
-            <TextView
+            <EditText
                 android:id="@+id/addGenderText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -166,7 +166,7 @@
                 android:layout_marginRight="20dp"
                 android:textSize="20dp"
                 android:textColor="#c9c9c9"
-                android:text="男"/>
+                android:text="女"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -197,7 +197,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             >
-            <TextView
+            <EditText
                 android:id="@+id/addJobText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -236,7 +236,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             >
-            <TextView
+            <EditText
                 android:id="@+id/addDescriptionText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
