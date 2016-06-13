@@ -8,12 +8,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.xue2015.myandroidapp.util.ActivityCollector;
 import com.example.xue2015.myandroidapp.util.TitleLayout;
 
 public class RegisterActivity extends Activity {
+    public static String username="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +47,9 @@ public class RegisterActivity extends Activity {
     }
 
     public void onClickRegister(View v) {
+        EditText editText = (EditText) findViewById(R.id.editRegisterUser);
         Intent it = new Intent();
+        username=editText.getText().toString();
         it.setClass(this, LoginActivity.class);
         startActivity(it);
         ActivityCollector.finishAll();

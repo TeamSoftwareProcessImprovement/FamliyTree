@@ -26,6 +26,8 @@ public class LoginActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         try {
             setContentView(R.layout.activity_login);
+            EditText editText = (EditText) findViewById(R.id.editLoginPhoneNum);
+            if(!RegisterActivity.username.equals("")) editText.setText(RegisterActivity.username);
             TitleLayout tl = (TitleLayout) this
                     .findViewById(R.id.loginActionBar);
             TextView title = (TextView) tl
