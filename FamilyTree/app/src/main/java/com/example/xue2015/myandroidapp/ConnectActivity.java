@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -43,6 +44,17 @@ public class ConnectActivity extends AppCompatActivity {
 //        SimpleAdapter adapter = new SimpleAdapter(this,listitems,R.layout.connect_items,new String[]{"name"},new int[]{R.id.connectname});
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,name1);
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String result = parent.getItemAtPosition(position).toString();
+                Intent intent = new Intent();
+                intent.putExtra("name",result);
+                intent.setClass(ConnectActivity.this,AddFamilyMember.class);
+                startActivity(intent);
+            }
+        });
 
         RelativeLayout tree = (RelativeLayout) findViewById(R.id.main_page_bottom_button_mainpage1);
         RelativeLayout circle = (RelativeLayout) findViewById(R.id.main_page_bottom_button_pointshop1);
