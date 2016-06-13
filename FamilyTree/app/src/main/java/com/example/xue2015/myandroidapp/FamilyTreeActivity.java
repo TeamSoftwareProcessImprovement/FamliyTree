@@ -120,7 +120,6 @@ public class FamilyTreeActivity extends Activity {
             }
         }
 
-
         addFamilyButton = (Button) findViewById(R.id.addFamilyButton);
         addFamilyButton.setOnClickListener(new View.OnClickListener() {
             @Override
