@@ -36,7 +36,7 @@ public class I extends Activity {
         circle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it  = new Intent(I.this,ConnectActivity.class);
+                Intent it  = new Intent(I.this,FamilyCircleActivity.class);
                 startActivity(it);
             }
         });

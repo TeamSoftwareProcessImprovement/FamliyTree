@@ -79,7 +79,7 @@ public class FamilyTreeActivity extends Activity {
         circle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it  = new Intent(FamilyTreeActivity.this,ConnectActivity.class);
+                Intent it  = new Intent(FamilyTreeActivity.this,FamilyCircleActivity.class);
                 startActivity(it);
             }
         });

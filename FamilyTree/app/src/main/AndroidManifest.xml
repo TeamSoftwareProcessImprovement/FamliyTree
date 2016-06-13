@@ -111,7 +111,8 @@
         <activity android:name=".AddFamilyMember" />
         <activity android:name=".DeleteFamilyMemberActivity" />
         <activity android:name=".ConnectActivity" />
-        <activity android:name=".view.DetailActivity"></activity>
+        <activity android:name=".view.DetailActivity" />
+        <activity android:name=".FamilyCircleActivity"></activity>
     </application>
 
 </manifest>

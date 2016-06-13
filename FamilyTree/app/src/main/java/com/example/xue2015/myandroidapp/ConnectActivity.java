@@ -86,7 +86,7 @@ public class ConnectActivity extends Activity {
             @Override
             public void onClick(View v) {
                 FamilyTreeActivity.FAM_FLAG = 1;
-                Intent it  = new Intent(ConnectActivity.this,ConnectActivity.class);
+                Intent it  = new Intent(ConnectActivity.this,FamilyCircleActivity.class);
                 startActivity(it);
             }
         });
