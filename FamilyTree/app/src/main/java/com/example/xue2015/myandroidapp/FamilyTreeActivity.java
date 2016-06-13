@@ -36,11 +36,11 @@ public class FamilyTreeActivity extends Activity {
     private FrameLayout fl;
 //    private
     public static int  FAM_FLAG = 1;
-    public static FamilyMember FAM_MEM;
-    public static FamilyMember ADD_MEM;
+    public static FamilyMember FAM_MEM = new FamilyMember();
+    public static FamilyMember ADD_MEM = new FamilyMember();
     public static List<FamilyNode> FAM_NODES = new ArrayList<FamilyNode>();
 //    public static FamilyNode FAM_NODES[] = new FamilyNode[5];
-    public static FamilyMember THI_MEM;
+    public static FamilyMember THI_MEM = new FamilyMember();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

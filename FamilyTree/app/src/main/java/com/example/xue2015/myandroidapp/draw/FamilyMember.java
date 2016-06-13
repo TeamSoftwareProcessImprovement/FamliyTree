@@ -7,7 +7,7 @@ import java.io.Serializable;
  */
 
 public class FamilyMember implements Serializable{
-    public String name;
+    public String name = "";
     public String generation;
     public String gender;
     public int age;

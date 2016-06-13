@@ -44,12 +44,14 @@ public class ConnectActivity extends Activity {
 
         ListView listView = (ListView) findViewById(R.id.listView3);
         //List<Map<String,String>> listitems = new ArrayList<Map<String,String>>();
-        setlist();
-        List<String> name = Order();
-        //List<String> name = new ArrayList<String>() ;
-
-       // String[] name1= name.toArray(new String[name.size()]);
-        String[] name1= {"小明","小红","小丽"};
+        //setlist();
+        //List<String> name = Order();
+        List<String> name = new ArrayList<String>() ;
+        name.add(FamilyTreeActivity.FAM_MEM.getName());
+        name.add(FamilyTreeActivity.ADD_MEM.getName());
+        name.add(FamilyTreeActivity.THI_MEM.getName());
+        String[] name1= name.toArray(new String[name.size()]);
+       // String[] name1= {"小明","小红","小丽"};
 //        for(int i=0;i<list.size();i++){
 //            Map<String,String> map = new HashMap<String,String>();
 //            map.put("name",name.get(i));
