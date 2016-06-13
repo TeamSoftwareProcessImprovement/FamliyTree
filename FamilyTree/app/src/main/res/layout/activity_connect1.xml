@@ -2,11 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <com.example.xue2015.myandroidapp.Titlebar
+        android:id="@+id/familyTreeConnectionTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="480dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
         android:id="@+id/listView3" />
+
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="30dp"

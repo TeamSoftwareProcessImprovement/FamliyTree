@@ -1,14 +1,20 @@
 package com.example.xue2015.myandroidapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+<<<<<<< HEAD
 import android.widget.AdapterView;
+=======
+import android.view.Window;
+>>>>>>> origin/master
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import com.example.xue2015.myandroidapp.draw.FamilyMember;
 import com.example.xue2015.myandroidapp.draw.FamilyNode;
@@ -21,13 +27,21 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Stack;
 
-public class ConnectActivity extends AppCompatActivity {
+public class ConnectActivity extends Activity {
     public List<FamilyNode> list = new ArrayList<FamilyNode>();
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_connect1);
+
+        Titlebar tb = (Titlebar) findViewById(R.id.familyTreeConnectionTitle);
+        TextView tv = (TextView) tb.findViewById(R.id.textAxtionBarTitle);
+        tv.setText("通讯录");
+//        tb.hideLeft();
+        tb.hideRight();
+
 
         ListView listView = (ListView) findViewById(R.id.listView3);
         //List<Map<String,String>> listitems = new ArrayList<Map<String,String>>();
@@ -63,6 +77,7 @@ public class ConnectActivity extends AppCompatActivity {
         tree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FamilyTreeActivity.FAM_FLAG = 1;
                 Intent it  = new Intent(ConnectActivity.this,FamilyTreeActivity.class);
                 startActivity(it);
             }
@@ -70,6 +85,7 @@ public class ConnectActivity extends AppCompatActivity {
         circle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FamilyTreeActivity.FAM_FLAG = 1;
                 Intent it  = new Intent(ConnectActivity.this,ConnectActivity.class);
                 startActivity(it);
             }
@@ -77,6 +93,7 @@ public class ConnectActivity extends AppCompatActivity {
         me.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                FamilyTreeActivity.FAM_FLAG = 1;
                 Intent it  = new Intent(ConnectActivity.this,I.class);
                 startActivity(it);
             }
@@ -102,6 +119,9 @@ public class ConnectActivity extends AppCompatActivity {
         node2.setId(2);
         node3.setMember(member3);
         node3.setId(3);
+
+
+
         list.add(node1);
         list.add(node2);
         list.add(node3);
