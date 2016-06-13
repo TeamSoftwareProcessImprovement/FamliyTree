@@ -103,9 +103,9 @@ public class FamilyTreeActivity extends Activity {
         }else if(FamilyTreeActivity.FAM_FLAG == 3){
             drawInitNode();
             drawParentNode(initLeft,initTop);
-            if (FamilyTreeActivity.FAM_MEM.getGender().equals("男")){
+            if (FamilyTreeActivity.ADD_MEM.getGender().equals("男")){
                 drawParentNode(initLeft + 100 - 150 -100, initTop - 50 - 50 - 250);
-            }else if(FamilyTreeActivity.FAM_MEM.getGender().equals("女")){
+            }else if(FamilyTreeActivity.ADD_MEM.getGender().equals("女")){
                 drawParentNode(initLeft + 100 - 150 -100 +300, initTop - 50 - 50 - 250);
             }
         }
