@@ -24,7 +24,7 @@
             android:background="@drawable/round_corner_inputbox"
             android:ems="10"
             android:hint="姓名"
-            android:inputType="phone" >
+            android:inputType="text" >
 
             <requestFocus />
         </EditText>

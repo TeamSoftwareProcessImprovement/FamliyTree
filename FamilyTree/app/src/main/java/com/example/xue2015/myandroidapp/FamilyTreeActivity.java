@@ -14,6 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.xue2015.myandroidapp.draw.DrawRelativeLine;
 import com.example.xue2015.myandroidapp.draw.DrawView;
@@ -21,6 +22,7 @@ import com.example.xue2015.myandroidapp.draw.FamilyInfo;
 import com.example.xue2015.myandroidapp.draw.FamilyMember;
 import com.example.xue2015.myandroidapp.draw.FamilyNode;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,9 +65,14 @@ public class FamilyTreeActivity extends Activity {
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<FamilyNode> connectFanilyList = new ArrayList<FamilyNode>();
-                connectFanilyList = FAM_NODES;
+//                List<FamilyNode> connectFanilyList = new ArrayList<FamilyNode>();
+//                connectFanilyList = FAM_NODES;
+                System.out.print(FAM_NODES.size());
+                String te = String.valueOf(FAM_NODES.size());
+                Toast.makeText(getApplicationContext(),te ,
+                        Toast.LENGTH_SHORT).show();
                 Intent it  = new Intent(FamilyTreeActivity.this,ConnectActivity.class);
+//                it.putExtra("connectFanilyList", (Serializable) connectFanilyList);
                 startActivity(it);
             }
         });
@@ -109,7 +116,7 @@ public class FamilyTreeActivity extends Activity {
             if (FamilyTreeActivity.ADD_MEM.getGender().equals("男")){
                 drawParentNode(initLeft + 100 - 150 -100, initTop - 50 - 50 - 250);
             }else if(FamilyTreeActivity.ADD_MEM.getGender().equals("女")){
-                drawParentNode(initLeft + 100 - 150 -100 +300, initTop - 50 - 50 - 250);
+                drawThirdParentNodes(initLeft + 100 - 150 -100 +300, initTop - 50 - 50 - 250);
             }
         }
 
@@ -204,41 +211,24 @@ public class FamilyTreeActivity extends Activity {
         motherDraw.setLeftPos(motherLeft);
         motherDraw.setTopPos(motherTop);
 
-        if(FamilyTreeActivity.FAM_FLAG == 2){
-            if(FamilyTreeActivity.ADD_MEM.getGender().equals("男")){
-                fatherDraw.setGeneration("Father");
-                fatherDraw.setName(FamilyTreeActivity.ADD_MEM.getName());
-                motherDraw.setGeneration("Mother");
-                motherDraw.setName("Name");
-            }else if(FamilyTreeActivity.ADD_MEM.getGender().equals("女")){
-                fatherDraw.setGeneration("Father");
-                fatherDraw.setName("Name");
-                motherDraw.setGeneration("Mother");
-                motherDraw.setName(FamilyTreeActivity.ADD_MEM.getName());
-            }else{
-                fatherDraw.setGeneration("Father");
-                fatherDraw.setName("Name");
-                motherDraw.setGeneration("Mother");
-                motherDraw.setName("Name");
-            }
-        }else if(FamilyTreeActivity.FAM_FLAG == 3){
-            if(FamilyTreeActivity.THI_MEM.getGender().equals("男")){
-                fatherDraw.setGeneration("Grandpa");
-                fatherDraw.setName(FamilyTreeActivity.THI_MEM.getName());
-                motherDraw.setGeneration("Grandma");
-                motherDraw.setName("Name");
-            }else if(FamilyTreeActivity.THI_MEM.getGender().equals("女")){
-                fatherDraw.setGeneration("Grandpa");
-                fatherDraw.setName("Name");
-                motherDraw.setGeneration("Grandma");
-                motherDraw.setName(FamilyTreeActivity.THI_MEM.getName());
-            }else{
-                fatherDraw.setGeneration("Grandpa");
-                fatherDraw.setName("Name");
-                motherDraw.setGeneration("Grandma");
-                motherDraw.setName("Name");
-            }
+
+        if(FamilyTreeActivity.ADD_MEM.getGender().equals("男")){
+            fatherDraw.setGeneration("Father");
+            fatherDraw.setName(FamilyTreeActivity.ADD_MEM.getName());
+            motherDraw.setGeneration("Mother");
+            motherDraw.setName("Name");
+        }else if(FamilyTreeActivity.ADD_MEM.getGender().equals("女")){
+            fatherDraw.setGeneration("Father");
+            fatherDraw.setName("Name");
+            motherDraw.setGeneration("Mother");
+            motherDraw.setName(FamilyTreeActivity.ADD_MEM.getName());
+        }else{
+            fatherDraw.setGeneration("Father");
+            fatherDraw.setName("Name");
+            motherDraw.setGeneration("Mother");
+            motherDraw.setName("Name");
         }
+
 //        drawRelativeLine.setDrawMode(0);
         drawRelativeLine.setChildLeft(childLeft);
         drawRelativeLine.setChildTop(childTop);
@@ -250,6 +240,74 @@ public class FamilyTreeActivity extends Activity {
         fl.addView(drawRelativeLine,tparams);
 
 //        sv.addView(fl);
+    }
+
+    public void drawThirdParentNodes(float childLeft, float childTop){
+        //param should be the FamilyNode
+//        FamilyMember fm = (FamilyMember) getIntent().getSerializableExtra(AddFamilyMember.ADD_MEM);
+
+        //specify the parentNode pos
+        float fatherLeft = childLeft + 100 - 150 -100;
+        float fatherTop = childTop - 50 - 50 - 250;
+        float motherLeft = fatherLeft + 300;
+        float motherTop = fatherTop;
+        //draw line
+        DrawRelativeLine drawRelativeLine = new DrawRelativeLine(this);
+
+        if(fatherLeft < 0){         //father mode
+            fatherLeft = childLeft;
+            motherLeft = fatherLeft + 300;
+            drawRelativeLine.setDrawMode(1);
+        }
+        if(motherLeft+200 > screemWidth){       //mother mode
+            motherLeft = childLeft;
+            fatherLeft = motherLeft - 300;
+            drawRelativeLine.setDrawMode(2);
+        }
+
+        //draw frame
+        DrawView fatherDraw = new DrawView(this);
+        fatherDraw.setTopPos(fatherTop);
+        fatherDraw.setLeftPos(fatherLeft);
+
+//        fatherDraw.setGeneration(fm.getGender());
+//        fatherDraw.setName(fm.getName());
+
+
+
+        DrawView motherDraw = new DrawView(this);
+        motherDraw.setLeftPos(motherLeft);
+        motherDraw.setTopPos(motherTop);
+
+
+
+        if(FamilyTreeActivity.THI_MEM.getGender().equals("男")){
+            fatherDraw.setGeneration("Grandpa");
+            fatherDraw.setName(FamilyTreeActivity.THI_MEM.getName());
+            motherDraw.setGeneration("Grandma");
+            motherDraw.setName("Name");
+        }else if(FamilyTreeActivity.THI_MEM.getGender().equals("女")){
+            fatherDraw.setGeneration("Grandpa");
+            fatherDraw.setName("Name");
+            motherDraw.setGeneration("Grandma");
+            motherDraw.setName(FamilyTreeActivity.THI_MEM.getName());
+        }else{
+            fatherDraw.setGeneration("Grandpa");
+            fatherDraw.setName("Name");
+            motherDraw.setGeneration("Grandma");
+            motherDraw.setName("Name");
+        }
+
+//        drawRelativeLine.setDrawMode(0);
+        drawRelativeLine.setChildLeft(childLeft);
+        drawRelativeLine.setChildTop(childTop);
+
+        //add into FL
+        FrameLayout.LayoutParams tparams = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        fl.addView(fatherDraw,tparams);
+        fl.addView(motherDraw,tparams);
+        fl.addView(drawRelativeLine,tparams);
+
     }
 
 
