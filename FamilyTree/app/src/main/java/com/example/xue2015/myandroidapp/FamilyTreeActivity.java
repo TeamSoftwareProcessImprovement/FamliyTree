@@ -67,10 +67,10 @@ public class FamilyTreeActivity extends Activity {
             public void onClick(View v) {
 //                List<FamilyNode> connectFanilyList = new ArrayList<FamilyNode>();
 //                connectFanilyList = FAM_NODES;
-                System.out.print(FAM_NODES.size());
-                String te = String.valueOf(FAM_NODES.size());
-                Toast.makeText(getApplicationContext(),te ,
-                        Toast.LENGTH_SHORT).show();
+//                System.out.print(FAM_NODES.size());
+//                String te = String.valueOf(FAM_NODES.size());
+//                Toast.makeText(getApplicationContext(),te ,
+//                        Toast.LENGTH_SHORT).show();
                 Intent it  = new Intent(FamilyTreeActivity.this,ConnectActivity.class);
 //                it.putExtra("connectFanilyList", (Serializable) connectFanilyList);
                 startActivity(it);
@@ -114,7 +114,7 @@ public class FamilyTreeActivity extends Activity {
             drawInitNode();
             drawParentNode(initLeft,initTop);
             if (FamilyTreeActivity.ADD_MEM.getGender().equals("男")){
-                drawParentNode(initLeft + 100 - 150 -100, initTop - 50 - 50 - 250);
+                drawThirdParentNodes(initLeft + 100 - 150 -100, initTop - 50 - 50 - 250);
             }else if(FamilyTreeActivity.ADD_MEM.getGender().equals("女")){
                 drawThirdParentNodes(initLeft + 100 - 150 -100 +300, initTop - 50 - 50 - 250);
             }

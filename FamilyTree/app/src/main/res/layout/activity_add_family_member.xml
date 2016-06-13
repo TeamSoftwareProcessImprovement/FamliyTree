@@ -48,7 +48,7 @@
                 android:layout_marginRight="20dp"
                 android:textSize="20dp"
                 android:textColor="#c9c9c9"
-                android:text="薛忆非"/>
+                android:text="小明"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -127,7 +127,7 @@
                 android:layout_marginRight="20dp"
                 android:textSize="20dp"
                 android:textColor="#c9c9c9"
-                android:text="3"/>
+                android:text="我"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -166,7 +166,7 @@
                 android:layout_marginRight="20dp"
                 android:textSize="20dp"
                 android:textColor="#c9c9c9"
-                android:text="女"/>
+                android:text="男"/>
         </LinearLayout>
     </LinearLayout>
 
