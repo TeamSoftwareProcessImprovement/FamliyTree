@@ -99,7 +99,7 @@ public class FamilyTreeActivity extends Activity {
         screemHeight = wm.getDefaultDisplay().getHeight();
         screemWidth = wm.getDefaultDisplay().getWidth();
         initLeft = screemWidth/2-100;
-        initTop = screemHeight - 450;
+        initTop = screemHeight - 450 - 50;
 
         //FrameLayout add DrawView
         fl = (FrameLayout) findViewById(R.id.familyTreeFrameLayout);
