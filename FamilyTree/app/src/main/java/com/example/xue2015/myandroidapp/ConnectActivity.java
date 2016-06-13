@@ -5,11 +5,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-<<<<<<< HEAD
 import android.widget.AdapterView;
-=======
 import android.view.Window;
->>>>>>> origin/master
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -18,6 +15,7 @@ import android.widget.TextView;
 
 import com.example.xue2015.myandroidapp.draw.FamilyMember;
 import com.example.xue2015.myandroidapp.draw.FamilyNode;
+import com.example.xue2015.myandroidapp.view.DetailActivity;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -49,7 +47,8 @@ public class ConnectActivity extends Activity {
         List<String> name = Order();
         //List<String> name = new ArrayList<String>() ;
 
-        String[] name1= name.toArray(new String[name.size()]);
+       // String[] name1= name.toArray(new String[name.size()]);
+        String[] name1= {"小明","小红","小丽"};
 //        for(int i=0;i<list.size();i++){
 //            Map<String,String> map = new HashMap<String,String>();
 //            map.put("name",name.get(i));
@@ -65,7 +64,7 @@ public class ConnectActivity extends Activity {
                 String result = parent.getItemAtPosition(position).toString();
                 Intent intent = new Intent();
                 intent.putExtra("name",result);
-                intent.setClass(ConnectActivity.this,AddFamilyMember.class);
+                intent.setClass(ConnectActivity.this,DetailActivity.class);
                 startActivity(intent);
             }
         });
