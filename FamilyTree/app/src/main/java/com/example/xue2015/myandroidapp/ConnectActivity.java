@@ -47,9 +47,10 @@ public class ConnectActivity extends Activity {
         //setlist();
         //List<String> name = Order();
         List<String> name = new ArrayList<String>() ;
-        name.add(FamilyTreeActivity.FAM_MEM.getName());
-        name.add(FamilyTreeActivity.ADD_MEM.getName());
-        name.add(FamilyTreeActivity.THI_MEM.getName());
+
+        if(!FamilyTreeActivity.FAM_MEM.getName().equals("") )name.add(FamilyTreeActivity.FAM_MEM.getName());
+        if(!FamilyTreeActivity.ADD_MEM.getName().equals("") )name.add(FamilyTreeActivity.ADD_MEM.getName());
+        if(!FamilyTreeActivity.THI_MEM.getName().equals("") ) name.add(FamilyTreeActivity.THI_MEM.getName());
         String[] name1= name.toArray(new String[name.size()]);
        // String[] name1= {"小明","小红","小丽"};
 //        for(int i=0;i<list.size();i++){

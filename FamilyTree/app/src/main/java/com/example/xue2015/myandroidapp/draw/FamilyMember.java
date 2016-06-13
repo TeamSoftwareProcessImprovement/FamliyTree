@@ -8,11 +8,11 @@ import java.io.Serializable;
 
 public class FamilyMember implements Serializable{
     public String name = "";
-    public String generation;
-    public String gender;
-    public int age;
-    public String job;
-    public String brithday;
+    public String generation="我";
+    public String gender="男";
+    public int age=18;
+    public String job="学生";
+    public String brithday="";
 
     public String description;
 

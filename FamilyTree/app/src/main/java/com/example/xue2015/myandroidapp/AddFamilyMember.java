@@ -23,6 +23,7 @@ public class AddFamilyMember extends Activity {
     public EditText addDescriptionText;
 
     public FamilyMember addFamilyMember;
+    public static int me = 0;
     public  final static String ADD_MEM = "com.xue.addMem.ser";
     public  final static String ADD_FLAG = "com.xue.addFlag.ser";
 
@@ -38,6 +39,11 @@ public class AddFamilyMember extends Activity {
         tb.hideLeft();
         tb.hideRight();
 
+        EditText name = (EditText) findViewById(R.id.addNameText);
+        if(me != 0) {
+            name.setText(FamilyTreeActivity.FAM_MEM.getName());
+            me=0;
+        }
 
         addFamilyMember = new FamilyMember();
         initView();

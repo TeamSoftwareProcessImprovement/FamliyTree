@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.xue2015.myandroidapp.FamilyTreeActivity;
 import com.example.xue2015.myandroidapp.R;
 import com.example.xue2015.myandroidapp.Titlebar;
 
@@ -38,25 +39,42 @@ public class DetailActivity extends Activity {
         //EditText descript = (EditText) findViewById(R.id.addDescriptionText);
         Button button = (Button) findViewById(R.id.addFamilyOKButton);
         button.setVisibility(View.INVISIBLE);
-        switch (name){
-            case "小明":username.setText("小明");
-                         age.setText("18");
-                         genaretion.setText("我");
-                         gender.setText("男");
-                         job.setText("大学生");
-                            break;
-            case "小红":username.setText("小红");
-                         age.setText("38");
-                         genaretion.setText("妈妈");
-                         gender.setText("女");
-                         job.setText("教师");
-                         break;
-            case "小丽":username.setText("小丽");
-                          age.setText("58");
-                          genaretion.setText("奶奶");
-                          gender.setText("女");
-                          job.setText("教师");
-                          break;
+        username.setText(name);
+        if(name.equals(FamilyTreeActivity.FAM_MEM.getName())){
+            age.setText(String.valueOf(FamilyTreeActivity.FAM_MEM.getAge()));
+            genaretion.setText(FamilyTreeActivity.FAM_MEM.getGeneration());
+            gender.setText(FamilyTreeActivity.FAM_MEM.getGender());
+            job.setText(FamilyTreeActivity.FAM_MEM.getJob());
+        }else if(name.equals(FamilyTreeActivity.ADD_MEM.getName())){
+            age.setText(String.valueOf(FamilyTreeActivity.ADD_MEM.getAge()));
+            genaretion.setText(FamilyTreeActivity.ADD_MEM.getGeneration());
+            gender.setText(FamilyTreeActivity.ADD_MEM.getGender());
+            job.setText(FamilyTreeActivity.ADD_MEM.getJob());
+        }else{
+            age.setText(String.valueOf(FamilyTreeActivity.THI_MEM.getAge()));
+            genaretion.setText(FamilyTreeActivity.THI_MEM.getGeneration());
+            gender.setText(FamilyTreeActivity.THI_MEM.getGender());
+            job.setText(FamilyTreeActivity.THI_MEM.getJob());
         }
+//        switch (name){
+//            case "小明":username.setText("小明");
+//                         age.setText("18");
+//                         genaretion.setText("我");
+//                         gender.setText("男");
+//                         job.setText("大学生");
+//                            break;
+//            case "小红":username.setText("小红");
+//                         age.setText("38");
+//                         genaretion.setText("妈妈");
+//                         gender.setText("女");
+//                         job.setText("教师");
+//                         break;
+//            case "小丽":username.setText("小丽");
+//                          age.setText("58");
+//                          genaretion.setText("奶奶");
+//                          gender.setText("女");
+//                          job.setText("教师");
+//                          break;
+//        }
     }
 }

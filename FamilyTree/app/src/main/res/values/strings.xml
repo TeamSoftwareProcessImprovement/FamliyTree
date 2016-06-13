@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyAndroidAPP</string>
+    <string name="app_name">FamilyTree</string>
     <!--<string name="title_activity_welcome"></string>?-->
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -168,7 +168,7 @@
     <string name="setting_switch_domain">启动网络调试</string>
     <string name="setting_use_help">使用帮助</string>
     <string name="app_copyright">© 头条网 toutiao.com</string>
-    <string name="title_activity_welcome">Welcome</string>
+    <string name="title_activity_welcome">FamilyTree</string>
     <string name="point">积分：</string>
     <string name="exchange">兑换礼物</string>
     <string name="cash">现金：</string>

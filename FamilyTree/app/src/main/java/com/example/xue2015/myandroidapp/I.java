@@ -63,6 +63,7 @@ public class I extends Activity {
         myInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AddFamilyMember.me=1;
                 Intent it = new Intent(I.this, AddFamilyMember.class);
                 I.this.startActivity(it);
             }
