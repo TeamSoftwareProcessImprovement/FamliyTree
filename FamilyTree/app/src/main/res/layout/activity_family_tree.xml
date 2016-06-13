@@ -15,7 +15,8 @@
         android:id="@+id/familyTreeFrameLayout"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
 
         <!--<com.example.xue2015.myandroidapp.draw.DrawView
             android:layout_width="wrap_content"
@@ -26,6 +27,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
             android:layout_gravity="right|bottom"
             >
 
