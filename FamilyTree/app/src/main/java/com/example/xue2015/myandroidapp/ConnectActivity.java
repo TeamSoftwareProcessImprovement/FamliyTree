@@ -120,11 +120,17 @@ public class ConnectActivity extends Activity {
         node3.setMember(member3);
         node3.setId(3);
 
+//        FamilyTreeActivity.FAM_NODES
 
+//        ArrayList<FamilyNode> connectFanilyList =  (ArrayList<FamilyNode>) getIntent().getSerializableExtra("connectFanilyList");
 
         list.add(node1);
         list.add(node2);
         list.add(node3);
+//        for(int i = 0; i < connectFanilyList.size(); i++){
+//            list.add(connectFanilyList.get(i));
+//        }
+
     }
 
     public List<String> Order(){

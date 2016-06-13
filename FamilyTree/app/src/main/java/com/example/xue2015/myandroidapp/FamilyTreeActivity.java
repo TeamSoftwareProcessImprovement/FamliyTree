@@ -14,6 +14,7 @@ import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.xue2015.myandroidapp.draw.DrawRelativeLine;
 import com.example.xue2015.myandroidapp.draw.DrawView;
@@ -21,6 +22,7 @@ import com.example.xue2015.myandroidapp.draw.FamilyInfo;
 import com.example.xue2015.myandroidapp.draw.FamilyMember;
 import com.example.xue2015.myandroidapp.draw.FamilyNode;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,9 +65,14 @@ public class FamilyTreeActivity extends Activity {
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<FamilyNode> connectFanilyList = new ArrayList<FamilyNode>();
-                connectFanilyList = FAM_NODES;
+//                List<FamilyNode> connectFanilyList = new ArrayList<FamilyNode>();
+//                connectFanilyList = FAM_NODES;
+                System.out.print(FAM_NODES.size());
+                String te = String.valueOf(FAM_NODES.size());
+                Toast.makeText(getApplicationContext(),te ,
+                        Toast.LENGTH_SHORT).show();
                 Intent it  = new Intent(FamilyTreeActivity.this,ConnectActivity.class);
+//                it.putExtra("connectFanilyList", (Serializable) connectFanilyList);
                 startActivity(it);
             }
         });
